@@ -1,0 +1,408 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Potter Controle</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+
+    <script src="Assets/jquery-1.11.1.min.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="Assets/bootstrap.min.css">
+    <script src="Assets/bootstrap.min.js" type="text/javascript"></script>
+    
+    <link rel="stylesheet" href="Assets/css.css">
+    <link rel="stylesheet" href="Assets/css2.css">
+
+    <script src="Assets/js.js" type="text/javascript"></script>
+
+</head>
+<body>
+    
+<nav class="navbar navbar-default" role="navigation">
+<div class="container-fluid">
+    <div class="navbar-brand">
+        <p>Potter Control</p>
+    </div>
+    <p class="navbar-text navbar-right sr-only" id="spinner"><i class="fa fa-circle-o-notch fa-spin fa-lg"></i></p>
+</div>
+</nav>
+
+<div class="container">
+
+    <div class="well p10 mb20" id="EstArCondicionado">
+
+        <div class="row">
+            <div class="col-xs-6">
+                
+                <h2 class="m0">Ar-Condicionado</h2>
+
+            </div>
+            <div class="col-xs-6 rs-align-right-center">
+        
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default BtnLigar"><i class="fa fa-power-off"></i> Ligar</a>
+                    <a href="#" class="btn btn-default BtnDesligar"><i class="fa fa-power-off"></i> Desligar</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-3 text-center">
+                
+                <h3 class="m0 mb10">Modo</h3>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnModo BtnModo_Cool" data-valor="Cool"><i class="fa fa-asterisk fa-2x"></i></a>
+                    <a class="btn btn-default BtnModo BtnModo_Heat" data-valor="Heat"><i class="fa fa-sun-o fa-2x"></i></a>
+                    <a class="btn btn-default BtnModo BtnModo_Fan" data-valor="Fan"><i class="fa fa-retweet fa-2x"></i></a>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-sm-3 text-center">
+            
+                <h3 class="m0 mb10">Fan (velocidade)</h3>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnFanVelocidade BtnFanVelocidade_Min" data-valor="Min"><i class="fa fa-battery-quarter fa-2x"></i></a>
+                    <a class="btn btn-default BtnFanVelocidade BtnFanVelocidade_Med" data-valor="Med"><i class="fa fa-battery-half fa-2x"></i></a>
+                    <a class="btn btn-default BtnFanVelocidade BtnFanVelocidade_Max" data-valor="Max"><i class="fa fa-battery-full fa-2x"></i></a>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-sm-3 text-center">
+            
+                <h3 class="m0 mb10">Fan (Posição)</h3>
+
+                <div class="mb10">
+                <div class="btn-group">
+                    <a class="btn btn-default BtnFanPosicaoTipo BtnFanPosicaoTipo_Auto" data-valor="Auto"><i class="fa fa-circle-o"></i></a>
+                    <a class="btn btn-default BtnFanPosicaoTipo BtnFanPosicaoTipo_Manual" data-valor="Manual"><i class="fa fa-stop-circle"></i></a>
+                </div>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnFanPosicao BtnFanPosicao_Baixo" data-valor="Baixo"><i class="fa fa-battery-quarter fa-2x"></i></a>
+                    <a class="btn btn-default BtnFanPosicao BtnFanPosicao_Medio" data-valor="Medio"><i class="fa fa-battery-half fa-2x"></i></a>
+                    <a class="btn btn-default BtnFanPosicao BtnFanPosicao_Alto" data-valor="Alto"><i class="fa fa-battery-full fa-2x"></i></a>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-sm-3 text-center">
+        
+                <h3 class="m0 mb10">Temperatura</h3>
+
+                <div class="btn-group" id="BtnTemperatura">
+                <button type="button" class="btn btn-default dropdown-toggle BlcTemperatura" id="BlcTemperatura" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="c">
+                    16
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a href="#" data-valor="16">16</a></li>
+                    <li><a href="#" data-valor="18">18</a></li>
+                    <li><a href="#" data-valor="20">20</a></li>
+                    <li><a href="#" data-valor="24">24</a></li>
+                    <li><a href="#" data-valor="26">26</a></li>
+                    <li><a href="#" data-valor="28">28</a></li>
+                    <li><a href="#" data-valor="30">30</a></li>
+                </ul>
+                </div>
+
+                <div class="btn-group-vertical">
+                    <a class="btn btn-default" id="BtnTemperaturaCtrlMais"><i class="fa fa-chevron-up"></i></a>
+                    <a class="btn btn-default" id="BtnTemperaturaCtrlMenos"><i class="fa fa-chevron-down"></i></a>
+                </div>
+                
+            </div>
+        </div>
+
+        <hr />
+          
+        <div class="text-center">
+
+            <h3 class="m0 mb10">Pré Definições</h3>
+
+            <div class="btn-group">
+                <a class="btn btn-default BtnPreDefinicao" data-valor="Heat_Max_Manual_Baixo_30">Quente / 30</a>
+                <a class="btn btn-default BtnPreDefinicao" data-valor="Cool_Max_Auto_Alto_16">Frio / 16</a>
+                <a class="btn btn-default BtnPreDefinicao" data-valor="Cool_Max_Auto_Alto_20">Frio / 20</a>
+            </div>
+                
+        </div>
+
+        <hr />
+          
+        <div class="text-center">
+
+            <h3 class="m0 mb10">Auto-Desligar</h3>
+
+            <div id="BlcAutoDesligar_N">
+                <div class="btn-group">
+                    <a class="btn btn-default BtnAutoDesligar" data-valor="30">30 seg</a>
+                    <a class="btn btn-default BtnAutoDesligar" data-valor="300">5 min</a>
+                    <a class="btn btn-default BtnAutoDesligar" data-valor="600">10 min</a>
+                    <a class="btn btn-default BtnAutoDesligar" data-valor="1800">30 min</a>
+                    <a class="btn btn-default BtnAutoDesligar" data-valor="3600">1 hr</a>
+                </div>
+            </div>
+
+            <div class="hide" id="BlcAutoDesligar_S">
+                <div class="text-center bold color-vermelho1 font-s-24 background-branco1 p20" id="BlcAutoDesligar_TempoRestante">
+                    --
+                </div>
+                <div class="mt10">
+                    <a class="btn btn-default BtnAutoDesligar" data-valor="0">Cancelar</a>
+                </div>
+            </div>
+                
+        </div>
+
+    </div>
+
+    <div class="well p10 mb20">
+
+        <h2 class="m0 mb20">Iluminação</h2>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 text-center">
+                
+                <h3 class="m0 mb10">Luz #1</h3>
+
+                <a class="btn btn-default BtnComandos" data-valor="Luz1"><i class="fa fa-toggle-on"></i> Ligar / Desligar</a>
+                
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+            
+                <h3 class="m0 mb10">Led #1</h3>
+
+                <a class="btn btn-default BtnComandos" data-valor="Led1"><i class="fa fa-toggle-on"></i> Ligar / Desligar</a>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="well p10 mb20">
+
+        <h2 class="m0 mb20">Home-Theater</h2>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 text-center">
+                
+                <h3 class="m0 mb10">Controle</h3>
+
+                <a class="btn btn-default BtnComandos" data-valor="SomOnOff"><i class="fa fa-toggle-on"></i> Ligar / Desligar</a>
+
+                <a class="btn btn-default BtnComandos" data-valor="SomInput"><i class="fa fa-keyboard-o"></i> Input</a>
+                
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+            
+                <h3 class="m0 mb10">Volume</h3>
+
+                <div class="mb10">
+                <div class="btn-group">
+                    <a class="btn btn-default BtnComandos" data-valor="SomVolMais"><i class="fa fa-chevron-up"></i></a>
+                    <a class="btn btn-default BtnComandos" data-valor="SomVolMenos"><i class="fa fa-chevron-down"></i></a>
+                </div>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnComandos" data-valor="SomVolMaisTudo"><i class="fa fa-chevron-circle-up fa-2x"></i></a>
+                    <a class="btn btn-default BtnComandos" data-valor="SomVolMenosTudo"><i class="fa fa-chevron-circle-down fa-2x"></i></a>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+        
+                <h3 class="m0 mb10">Pré Definições</h3>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnComandos" data-valor="SomConfig1">Config #1</a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="well p10 mb20">
+
+        <h2 class="m0 mb20">Switch de Audio</h2>
+
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                
+                <h3 class="m0 mb10">Controle</h3>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnComandos" data-valor="SwitchAudio1"><i class="fa fa-keyboard-o"></i> #1 (Notebook)</a>
+                    <a class="btn btn-default BtnComandos" data-valor="SwitchAudio2"><i class="fa fa-keyboard-o"></i> #2 (Desktop)</a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="well p10 mb20">
+
+        <div class="row">
+            <div class="col-xs-6">
+                
+                <h2 class="m0">Fia de Led</h2>
+
+            </div>
+            <div class="col-xs-6 rs-align-right-center">
+        
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Ligar"><i class="fa fa-power-off"></i> Ligar</a>
+                    <a href="#" class="btn btn-default BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Desligar"><i class="fa fa-power-off"></i> Desligar</a>
+                </div>
+                
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 text-center">
+                
+                <h3 class="m0 mb10">Efeitos</h3>
+
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default font-s-10 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Efeito_Parado"><i class="fa fa-power-off"></i> Parado</a>
+                    <a href="#" class="btn btn-default font-s-10 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Efeito_Flash"><i class="fa fa-power-off"></i> Flash</a>
+                    <a href="#" class="btn btn-default font-s-10 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Efeito_Strobe"><i class="fa fa-power-off"></i> Strobe</a>
+                    <a href="#" class="btn btn-default font-s-10 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Efeito_Fade"><i class="fa fa-power-off"></i> Fade</a>
+                    <a href="#" class="btn btn-default font-s-10 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Efeito_Random"><i class="fa fa-power-off"></i> Random</a>
+                </div>
+                
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+            
+                <h3 class="m0 mb10">Velocidade</h3>
+
+                <div class="mb10">
+                <div class="btn-group">
+                    <a class="btn btn-default BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Velocidade_Mais"><i class="fa fa-chevron-up"></i></a>
+                    <a class="btn btn-default BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Velocidade_Menos"><i class="fa fa-chevron-down"></i></a>
+                </div>
+                </div>
+
+                <div class="btn-group">
+                    <a class="btn btn-default BtnComandos" data-valor="FitaLed_Velocidade_MaisTudo"><i class="fa fa-chevron-circle-up fa-2x"></i></a>
+                    <a class="btn btn-default BtnComandos" data-valor="FitaLed_Velocidade_MenosTudo"><i class="fa fa-chevron-circle-down fa-2x"></i></a>
+                </div>
+            
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+            
+                <h3 class="m0 mb10">Cor</h3>
+
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default min-h-34 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Cor_Vermelho">
+                        <i class="fa fa-stop color-vermelho1 mt3"></i>
+                    </a>
+                    <a href="#" class="btn btn-default min-h-34 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Cor_Verde">
+                        <i class="fa fa-stop color-verde1 mt3"></i>
+                    </a>
+                    <a href="#" class="btn btn-default min-h-34 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Cor_Azul">
+                        <i class="fa fa-stop color-azul1 mt3"></i>
+                    </a>
+                    <a href="#" class="btn btn-default min-h-34 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Cor_VermelhoVerde">
+                        <i class="fa fa-stop color-vermelho1"></i>
+                        <i class="fa fa-stop color-verde1"></i>
+                    </a>
+                    <a href="#" class="btn btn-default min-h-34 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Cor_AzulVerde">
+                        <i class="fa fa-stop color-azul1"></i>
+                        <i class="fa fa-stop color-verde1"></i>
+                    </a>
+                    <a href="#" class="btn btn-default min-h-34 BtnComandos" data-valor="IrCtrl" data-valor2="FitaLed_Cor_VermelhoAzul">
+                        <i class="fa fa-stop color-vermelho1"></i>
+                        <i class="fa fa-stop color-azul1"></i>
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+    
+    <div class="well p10 mb20">
+
+        <h2 class="m0 mb20">Outros</h2>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 text-center">
+                
+                <h3 class="m0 mb10">DataShow</h3>
+
+                <a class="btn btn-default BtnComandos" data-valor="IrCtrl" data-valor2="DataShowOnOff"><i class="fa fa-toggle-on"></i> Ligar / Desligar</a>
+                
+            </div>
+            <div class="col-xs-12 col-sm-4 text-center">
+                
+                <h3 class="m0 mb10">Gerenciamento</h3>
+
+                <a class="btn btn-default BtnComandos" data-valor="EspReiniciarNormal"><i class="fa fa-window-close-o"></i> Reiniciar</a>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <div class="well p10 mb20" id="EstDebugRemoto">
+
+        <div class="row">
+            <div class="col-xs-6">
+                
+                <h2 class="m0">Debug Remoto</h2>
+
+            </div>
+            <div class="col-xs-6 rs-align-right-center">
+        
+                <div class="btn-group">
+                    <a href="#" class="btn btn-default BtnComandos" data-valor="DebugRemotoOn"><i class="fa fa-power-off"></i> Ligar</a>
+                    <a href="#" class="btn btn-default BtnComandos" data-valor="DebugRemotoOff"><i class="fa fa-power-off"></i> Desligar</a>
+                </div>
+
+                <label class="ml20">
+                    <input type="checkbox" id="DebugRemoto_IsScrool" value="S"> 
+                    Scrool?
+                </label>
+                
+            </div>
+        </div>
+
+        <hr />
+
+        <div id="BlcMensagensRedor">
+            <div id="BlcMensagens"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<script language="javascript" type="text/javascript">
+var ObjCtrlSistema;
+var ObjCtrlDebugRemoto;
+
+$(function(){
+
+    ObjCtrlSistema              = new CtrlSistema();
+    ObjCtrlSistema.Init();
+
+    ObjCtrlDebugRemoto          = new CtrlDebugRemoto();
+
+});
+</script>
+
+</body>
+</html>

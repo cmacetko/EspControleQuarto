@@ -1,0 +1,14 @@
+{
+    "name": "EspControleQuarto",
+    "version": "1.2.39",
+    "description": "",
+    "author": "Paloma Macetko <cmacetko@gmail.com>",
+    "homepage": "https://github.com/cmacetko/EspControleQuarto",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cmacetko/EspControleQuarto"
+    },
+    "bugs": {
+        "url": "https://github.com/cmacetko/EspControleQuarto/issues"
+    }
+}
